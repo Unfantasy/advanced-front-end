@@ -1,0 +1,690 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>分享——CSS中的一对好基友</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="src/mobilebone.css">
+<link rel="stylesheet" href="src/mobilebone.animate.css">
+<link rel="stylesheet" href="src/quick-layout-min.css">
+<link rel="stylesheet" href="css/ppt.css">
+<link rel="stylesheet" href="css/vertical-align.css">
+<link rel="stylesheet" href="css/my.css">
+</head>
+
+<body>
+<div class="page out">
+	<div class="content only-header">
+        <img src="img/heart.jpg" width="400" class="center">
+    </div>
+</div>
+<div class="page out">
+	<div class="content section-header">
+        <h1>CSS中的一对好基友</h1>
+        <h2>——line-height和vertical-align</h2>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+		<div class="">
+			<h2>line-height篇</h2>
+			<p>定义：行高，两行文字基线之间的距离。</p>
+			<img src="img/baseline.jpg" >
+			<p class="fade out mark-1">注意：不同的字体的基线位置是不一样的！比如微软雅黑字体的基线是略微下沉一点的。</p>
+			<p class="fade out mark-1">所以不同的字体在同样的条件下显示情况可能不一致（初始化字体）</p>
+		</div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+		<div class="center">
+			<img src="img/infact1.png" >
+		</div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+		<div class="">
+			<h2>支持的属性值</h2>
+			<ul class="mt-20 liActive">
+					<li><big>normal (默认)</big>
+							<p class="slidedown-p trans">跟着用户的浏览器走的，与元素的字体关联</p>
+						</li>
+						<li><big>&lt;number&gt; 1.2; 1.5; 3...</big>
+							<p class="slidedown-p trans">font-size的倍数</p>
+						</li>
+						<li><big>&lt;length&gt; 14px; 2em; 1.5rem...</big>
+						</li>
+						<li><big>&lt;percent&gt; 100%; 150%...</big>
+						</li>
+						<li><big>inherit</big>
+							<p class="slidedown-p trans">input框等元素默认行高是normal, 使用inherit可以让文本框样式可控性更强</p>
+						</li>
+				</ul>
+		</div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+        <h1>区别</h1>
+        <div class="main">
+       		<ul>
+       			<li><p><code>line-height: 1.5</code>所有可继承元素根据font-size重计算行高</p></li>
+       			<li><p><code>line-height: 150%/1.5em</code>当前元素根据font-size计算行高，继承给下面的元素</p></li>
+       		</ul>
+					<p class="fade out">推荐使用数值，不使用百分比/em</p>
+        </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+    <h1>图文混排</h1>
+    <div class="main">
+	   	<p class="bge0 lhp-default" id="lhp">
+	   		<img src="img/xixi.jpg" width="300">
+				<span class="lhs" id="lhs">xx: 哇!我的女神在看我哎！</span>
+	   	</p>
+			<p class="fade out">行高不会影响图片占据的高度</p>
+			<p class="fade out">图片默认跟文字基线对齐，使得底部有间隙。</p>
+    </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+    <h1>解决方法</h1>
+    <div class="main">
+			<ul>
+				<li>图片块状化 - 无基线对齐
+					<pre>img { display: block; }</pre>
+				</li>
+				<li>
+					图片底线对齐
+					<pre>img { vertical-align: bottom; }</pre>
+				</li>
+				<li>
+					行高足够小 - 基线位置上移
+					<pre>.box { line-height: 0; }</pre>
+				</li>
+			</ul>
+    </div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+    <h2>图片水平垂直（近似）居中</h2>
+    <div class="main">
+			<pre>
+.box { line-height: 300px; text-align: center; }
+.box > img { vertical-align: middle; }</pre>
+			<p class="box bge0">
+				<img src="img/xixi.jpg" width="300">
+			</p>
+    </div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+    	<div class="center tc">
+        	<img src="img/bingmayong.png" width="300">
+            <p>基情初现！</p>
+        </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content section-header">
+			<h1>vertical-align篇</h1>
+			<h2>——设置元素的垂直对齐方式。</h2>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+			<div class="center">
+				inherit
+			</div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+		<div class="main">
+			<ol class="center mt-20 liActive">
+				<li><big>线类</big>
+						<p class="slidedown-p trans"><span class="blue">baseline</span>, top, middle, bottom</p>
+				</li>
+				<li><big>文本类</big>
+					<p class="slidedown-p trans">text-top, text-bottom</p>
+				</li>
+				<li><big>上标下标类</big>
+					<p class="slidedown-p trans">sub, super</p>
+				</li>
+				<li><big>数值百分比类</big>
+					<p class="slidedown-p trans">20px, 2em, 20%, ...</p>
+				</li>
+			</ol>
+		</div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+        <div class="main">
+       		<h1 id="innerTransWidth" class="center mt-20 nowrap">数值<span class="dib ovh max-width trans vt">类 + </span>百分比类</h1>
+        </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+        <div class="main">
+       		<ol class="center mt-20 liActive">
+            	<h1>共性</h1>
+            	<li class="big">都带数字
+                	<p class="slidedown-p trans f24"><span class="red">20</span>px, <span class="red">2</span>em, <span class="red">20</span>%, ...</p>
+                </li>
+                <li class="big">都支持负值
+                	<p class="slidedown-p trans f24"><span class="red">-</span>20px, <span class="red">-</span>2em, <span class="red">-</span>20%, ...</p>
+                </li>
+                <li class="big">行为表现一致</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+    	<div class="center">
+            <h1 class="mt-20">百分比类的差异</h1>
+            <div class="main">
+                <p class="red nowrap">vertical-align的百分比值是相对于line-height计算的！</p>
+                <p class="b">一个文字和一个图片 - again：</p>
+                <div class="fix">
+                	<div id="targetLH" class="l" style="line-height:0;">
+                    	<span id="vValue2">女神：</span><img src="img/xixi.jpg" style="vertical-align: 0%;" width="200">
+                    </div>
+                    <div class="cell pl30">
+                    	line-height[<span id="rangeValue1">0</span>px]:
+                        <input type="range" id="range1" min="0" max="256" value="0">
+                        <p>
+                        	vertical-align[<span id="rangeValue2">0</span>%]:
+                            <input type="range" id="range2" min="-100" max="100" value="0">
+                        </p>
+                    </div>
+                </div>
+                <p class="fade out nowrap">IE6/IE7下vertical-align百分比值不支持小数line-height</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+    	<div class="center tc">
+        	<img src="img/bingmayong.png" width="300">
+            <p>基情四射！</p>
+        </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+  	<h2>vertical-align起作用的前提</h2>
+		<ol class="mt-20 liActive">
+			<li>
+				<big>inline水平</big>
+				<p class="slidedown-p trans">inline: &lt;img>, &lt;span>, &lt;strong>, &lt;em>, 未知元素, ...</p>
+				<p class="slidedown-p trans">inline-block: &lt;input>(IE8+), &lt;button>(IE8+), ...</p>
+			</li>
+			<li>
+				<big>'table-cell'元素</big>
+				<p class="slidedown-p trans">table-cell: &lt;td></p>
+			</li>
+		</ol>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+  	<h2>vertical-align失效的一般原因</h2>
+		<p class="fade out">display更改元素的显示水平</p>
+		<p class="fade out">CSS声明更改元素的显示水平</p>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+        <div class="main">
+       		<h1 class="center mt-20">线类属性值</h1>
+        </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+        <div class="main">
+       		<div class="center nowrap mt-20"><h1>vertical-align:bottom</h1></div>
+        </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+    	<div class="center nowrap mt-20">
+            <h1 class="mt-20">定义</h1>
+            <div class="main">
+                <ol>
+                    <li>inline/inline-block元素： 元素底部和整行的底部对齐。</li>
+                    <li>table-cell元素： 单元格底padding边缘和表格行的底部对齐。</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page out">
+	<div class="content only-header">
+        <div class="main">
+       		<div class="center nowrap mt-20"><h1>vertical-align:top</h1></div>
+        </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+    	<div class="center nowrap mt-20">
+            <h1 class="mt-20">定义</h1>
+            <div class="main">
+                <ol>
+                    <li>inline/inline-block元素： 元素顶部和整行的顶部对齐。</li>
+                    <li>table-cell元素： 单元格顶padding边缘和表格行的顶部对齐。</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page out">
+	<div class="content only-header">
+        <div class="main">
+       		<div class="center nowrap mt-20"><h1>vertical-align:middle</h1></div>
+        </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+    	<div class="center nowrap mt-20">
+            <h1 class="mt-20">定义</h1>
+            <div class="main">
+                <ol>
+                    <li>inline/inline-block元素： 元素的垂直中心点和父元素基线上1/2 x-height处对齐。</li>
+                    <li>table-cell元素： 单元格填充盒子相对于外面的表格行居中对齐。</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header tc">
+        <h1 class="mt10">(近似)垂直居中</h1>
+        <div class="main">
+        	<p class="mt-20">根据定义：元素垂直中心点和父级基线上1/2 x-height对齐</p>
+       		<p id="fontSize" class="bge0 mt20 mb20 rel" style="line-height:250px;">
+            	<span class="dib rel lh14"><i class="abs" style="top:50%; border-top: 1px solid red; width:100%;"></i><img src="img/xixi.jpg" width="256" class="vm"></span><span class="showline rel">x</span>
+                <i class="abs" style="top:50%; left: 0; border-top: 1px solid yellow; width:100%;"></i>
+            </p>
+            <p>黄线：容器中心；红线：图片中心</p>
+            <p>font-size(24-120): <input type="range" id="rangeFt" min="24" max="120" value="24" class="pct33"></p>
+        </div>
+    </div>
+</div>
+
+<div class="page out">
+	<div class="content only-header tc">
+        <h1 class="mt10">(完全)垂直居中</h1>
+        <div class="main">
+        	<p class="mt-20">根据定义：元素垂直中心点和父级基线上1/2 x-height对齐</p>
+            <a href="javascript:" class="btn btn-blue" onClick="this.nextElementSibling.style.fontSize=0;this.className='btn btn-green'">设置font-size:0</a>
+       		<p class="bge0 mt20 mb20 rel" style="line-height:250px;">
+            	<span class="dib rel lh14"><i class="abs" style="top:50%; border-top: 1px solid red; width:100%;"></i><img src="img/xixi.jpg" width="256" class="vm"></span><span class="showline rel">x</span>
+                <i class="abs" style="top:50%; left: 0; border-top: 1px solid yellow; width:100%;"></i>
+            </p>
+            <p>黄线：容器中心；红线：图片中心</p>
+        </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+        <div class="main">
+       		<div class="center nowrap mt-20"><h1>vertical-align:text-top/text-bottom</h1></div>
+        </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+        <div class="center nowrap mt-20">
+            <h1 class="mt-20">定义</h1>
+            <div class="main">
+                <ol>
+                    <li><strong>vertical-align:text-top</strong><p>盒子的顶部和父级content area的顶部对齐。</p></li>
+                    <li><strong>vertical-align:text-bottom</strong><p>盒子的低部和父级content area的低部对齐。</p></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page out" data-callback="fnPosLine">
+	<div class="content only-header">
+        <div class="main">
+       		<p class="bge0 ftRadio">
+            	<i id="line1" class="abs_line"></i>
+            	<img src="img/xixi.jpg" width="256" height="190" style="vertical-align:text-top;">
+                <span class="f20">20px</span>
+                <span class="f24">24px</span>
+                <span class="f32">32px</span>
+                <span class="f40">40px</span>
+            </p>
+            <p class="bge0 ftRadio">
+            	<i id="line2" class="abs_line"></i>
+            	<img src="img/xixi.jpg" width="256" height="190" style="vertical-align:text-bottom;">
+                <span class="f20">20px</span>
+                <span class="f24">24px</span>
+                <span class="f32">32px</span>
+                <span class="f40">40px</span>
+            </p>
+            <p id="ftRadioX">
+            	父级的font-size大小：
+            	<input type="radio" id="ft20" value="20" name="ft">
+                <label class="radio" for="ft20"></label><label for="ft20" class="mr20">20px</label>
+                <input type="radio" id="ft24" value="24" name="ft" checked>
+                <label class="radio" for="ft24"></label><label for="ft24" class="mr20">24px</label>
+                <input type="radio" id="ft32" value="32" name="ft">
+                <label class="radio" for="ft32"></label><label for="ft32" class="mr20">32px</label>
+                <input type="radio" id="ft40" value="40" name="ft">
+                <label class="radio" for="ft40"></label><label for="ft40">40px</label>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+        <div class="main">
+       		<h1 class="center" style="margin-top:-40px;">实际作用</h1>
+        </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+        <div class="main">
+       		<h1 class="center" style="margin-top:-40px; right:-5%;">表情图片(或原始尺寸背景图标)与文字的对齐效果。</h1>
+        </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+        <div class="main">
+       		<div class="center">
+            	<p class="f16 mt-20 pl10"><img id="faceImg" src="http://mat1.gtimg.com/www/mb/images/face/13.gif" height="24">龇牙咧嘴(vertical-align:<span id="faceVtValue">baseline</span>)<img id="helpImg" src="img/xixi.jpg" width="200" class="vt" style="display:none;"></p>
+                <ul id="chgFaceVt">
+                	<li data-vt="baseline" class="highlight">使用基线的问题在于图标偏上；</li>
+                    <li data-vt="bottom" class="highlight">使用顶线/底线的问题在于收<a href="javascript:" class="tdn otherInline">其他内联元素</a>影响，造成巨大定位偏差；</li>
+                    <li data-vt="middle" class="highlight">使用中线也是不错的选择，但需要恰好的字体大小以及兼容性要求不高；</li>
+                    <li data-vt="text-bottom" class="highlight">使用文本底部较合适，不受行高以及<a href="javascript:" class="tdn otherInline">其他内联元素</a>影响；</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+        <div class="main">
+        	<pre class="f20 mt10 mb10">.dib-baseline {
+  display: inline-block; width: 150px; height: 150px;
+  border: 1px solid #cad5eb; background-color: #f0f3f9;
+}</pre>
+			<pre class="f20 mt10">&lt;span class="dib-baseline">&lt;/span>
+&lt;span class="dib-baseline">x-baseline&lt;/span></pre>
+       		<p class="tc">
+            	<span class="dib-baseline"></span>
+                <span class="dib-baseline" onClick="this.innerHTML=this.innerHTML? '': 'x-baseline'">x-baseline</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+    	<p>CSS2的可视化格式模型文档：</p>
+        <blockquote>The <span class="red">baseline</span> of an <span class="red">'inline-block'</span> is the baseline of its last line box in the normal flow, unless it has either no in-flow line boxes or if its 'overflow' property has a computed value other than 'visible', in which case the baseline is the bottom margin edge.</blockquote>
+        <blockquote><span class="red">'inline-block'</span>的<span class="red">基线</span>是正常流中最后一个line box的基线, 除非，这个line box里面既没有line boxes或者本身'overflow'属性的计算值而不是'visible', 这种情况下基线是margin底边缘。</blockquote>
+    </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+		<div class="center">
+			<h2>本次分享到此...</h2>
+			<h2 class="fade out">&nbsp;&nbsp;&nbsp;还没有结束<img id="faceImg" class="my-face-img" src="http://mat1.gtimg.com/www/mb/images/face/13.gif" height="42"></h2>
+		</div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+		<div class="main">
+			<h2>彩蛋</h2>
+			<h4>元素垂直居中的n个方法</h4>
+			<div class="fade out">
+				<p>1.line-height，适用于单行文本</p>
+				<p class="bge0 egg-1">这是一段测试的文字， css样式为：height: 6em; line-height: 6em;</p>
+			</div>
+		</div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+		<div class="main">
+			<h4>2.vertical-align: middle</h4>
+			<pre>
+.pic_box{width:300px; height:300px; background-color:#beceeb; font-size:0; *font-size:200px; text-align:center;}
+.pic_box img{vertical-align:middle;}
+.pic_box:after{display:inline-block; width:0; height:100%; content:"center"; vertical-align:middle; overflow:hidden;}</pre>
+		</div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+		<div class="main center">
+			<p class="egg-2"><img src="img/xixi.jpg"></p>
+		</div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+		<div class="main">
+			<h4>3.vertical-align: middle + display: table-cell</h4>
+			<pre>
+.pic_box{width:300px; height:300px; background-color:#beceeb; display: table-cell; text-align: center; vertical-align: middle;}
+		</div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+		<div class="main center">
+			<p class="egg-3"><img src="img/xixi.jpg"></p>
+		</div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+		<div class="main">
+			<h4>4.绝对定位 + margin</h4>
+			<pre>
+.content {
+  position: absolute;
+  top: 50%;
+  left:50%;
+  width: 240px;
+  margin-left: -120px;/* 目标元素的宽度的一半 */
+  height: 240px;
+  margin-top: -120px; /* 目标元素的高度的一半 */
+}</pre>
+			<p class="fade out mark-1">此方法只适用于固定大小的元素</p>
+		</div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+		<div class="main">
+			<h4>5.绝对定位 + margin</h4>
+			<pre>
+#content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 240px;
+  width: 70%;
+}</pre>
+		</div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+		<div class="main">
+			<h4>6.绝对定位 + transform</h4>
+			<pre>
+.inner{
+  position : absolute;
+  top: 50%;
+  left:50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}</pre>
+		</div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+		<div class="main">
+			<h4>7.flex</h4>
+			<pre class="egg-7-pre">
+.box{
+  display: flex;
+  align-items:center;
+}</pre>
+<div class="egg-7 bge0">
+	<p>这是一段测试的文字</p>
+</div>
+		</div>
+  </div>
+</div>
+
+<div class="page out">
+	<div class="content only-header">
+		<div class="main">
+			<h4>8.浮动元素水平居中的方法</h4>
+			<p>让最外面的浮动层相对定位，left等于50%，然后内部嵌套层也使用相对定位且left设为-50%，这样的效果就是内层相对整行为水平居中</p>
+
+			<div class="egg-8 bge0">
+				<div><span>这是浮动内部的嵌套层</span></div>
+			</div>
+		</div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+		<div class="center">
+			<h2>本次分享到此...</h2>
+			<h2 class="fade out">&nbsp;&nbsp;&nbsp;仍然没有结束<img id="faceImg" class="my-face-img" src="http://mat1.gtimg.com/www/mb/images/face/13.gif" height="42"></h2>
+		</div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+		<div class="center">
+			<h2>致敬张鑫旭老师</h2>
+			<h2 class="fade out">感谢伯骏大神</h2>
+		</div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+		<div class="center">
+			<h2>本次分享到此...</h2>
+			<h2 class="fade out">&nbsp;&nbsp;&nbsp;结束！</h2>
+		</div>
+  </div>
+</div>
+<div class="page out">
+	<div class="content only-header">
+		<div class="center">
+			<h2>谢谢大家！</h2>
+		</div>
+  </div>
+</div>
+
+<script src="src/mobilebone.js"></script>
+<script src="src/mobilebone.ppt.js"></script>
+<script src="js/ppt.js"></script>
+<script src="js/vertical-align.js"></script>
+<script>
+$("#lhp")[0].onclick = function() {
+	$("#lhp")[0].classList.toggle('lhp');
+};
+$("#innerTransWidth")[0].addEventListener("click",function() {
+	this.querySelector('span').style.maxWidth = "150px";
+});
+
+var range1 = document.getElementById("range1"), range2 = document.getElementById("range2");
+var rangeValue1 = document.getElementById("rangeValue1"), rangeValue2 = document.getElementById("rangeValue2");
+var targetLH = document.getElementById("targetLH"), vValue2 = document.getElementById("vValue2");
+range1.onchange = function() {
+	rangeValue1.innerHTML = this.value;
+	targetLH.style.lineHeight = this.value + "px";
+};
+range2.onchange = function() {
+	rangeValue2.innerHTML = this.value;
+	vValue2.style.verticalAlign = this.value + "%";
+};
+var eleFt = $("#fontSize")[0];
+$("#rangeFt")[0].onchange = function() {
+	eleFt.style.fontSize = this.value + "px";
+};
+var golbalPage = null;
+var fnPosLine = function(page) {
+	if (page) golbalPage = page;
+	page = page || golbalPage;
+	var line1 = page.querySelector('#line1'), line2 = page.querySelector('#line2');
+	line1.style.top = line1.nextElementSibling.offsetTop + 'px';
+	line2.style.top = line2.nextElementSibling.offsetTop + line2.nextElementSibling.clientHeight + 'px';
+};
+$('#ftRadioX input').forEach(function(radio) {
+	radio.addEventListener('click', function() {
+		var ft = this.value;
+		$('.ftRadio').forEach(function(p) {
+			p.style.fontSize = ft + 'px';
+		});
+		fnPosLine();
+	});
+});
+
+var faceImg = $("#faceImg")[0], helpImg = $("#helpImg")[0], faceVtValue = $("#faceVtValue")[0];
+$("#chgFaceVt li").forEach(function(li) {
+	li.addEventListener("click", function() {
+		var vt = this.getAttribute('data-vt');
+		if (faceImg) faceImg.style.verticalAlign = vt;
+
+		faceVtValue.innerHTML = vt;
+	});
+});
+$(".otherInline").forEach(function(a) {
+	a.addEventListener("click", function() {
+		if (this.innerHTML == '行高') {
+			var lh = helpImg.parentNode.style.lineHeight;
+			if (lh == "14px") {
+				helpImg.parentNode.style.lineHeight = '';
+			} else {
+				helpImg.parentNode.style.lineHeight = '14px';
+			}
+			return;
+		}
+		if (helpImg.style.display != 'none') {
+			helpImg.style.display = "none";
+		} else {
+			helpImg.style.display = "inline";
+		}
+	});
+});
+</script>
+</body>
+</html>
