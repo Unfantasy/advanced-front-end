@@ -1,0 +1,94 @@
+.mark-1 {
+  font-style: italic;
+}
+
+.lhp-default {
+  line-height: 90px;
+}
+
+.lhp span {
+  display: inline-block;
+  background-color: #fff;
+}
+
+.box { line-height: 300px; text-align: center; }
+
+.box > img { vertical-align: middle; }
+
+.assist-i {
+  display: middle;
+  display: inline-block;
+  width: 0;
+  outline: 1px dashed red;
+}
+
+.my-face-img {
+  vertical-align: text-bottom;
+  height: 43px;
+}
+
+.egg-1 {
+  line-height: 6em;
+  height: 6em;
+}
+
+.egg-2 {
+  width: 300px;
+  height: 300px;
+  background-color: #beceeb;
+  font-size: 0;
+  *font-size: 200px;
+  text-align: center;
+  margin: auto;
+}
+.egg-2 img {
+  vertical-align: middle;
+}
+.egg-2:after {
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  content: "center";
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.egg-3 {
+  display: table-cell;
+  width: 300px;
+  height: 300px;
+  background-color: #beceeb;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.egg-7 {
+  display: flex;
+  align-items:center;
+  height: 200px;
+  text-align: center;
+}
+.egg-7 p {
+  width: 100%;
+}
+
+.egg-8 {
+  background: #e0e0e0;
+  height: 5em;
+  position: relative;
+}
+.egg-8 div {
+  float: left;
+  position: relative;
+  text-align: left;
+  left: 50%;
+  border: 1px solid #f00;
+}
+
+.egg-8 span {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  left: -50%;
+  border: 1px dashed #f00;
+}
